@@ -23,9 +23,9 @@ deaths = le.fit_transform(list(data['deaths']))
 X = list(zip(engname, casecount, recovered, totalpop2019))
 y = list(deaths)
 
-x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size=0.2)
+x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size=0.1)
 
-model = KNeighborsClassifier(n_neighbors=3)
+model = KNeighborsClassifier(n_neighbors=1)
 
 model.fit(x_test, y_test)
 acc = model.score(x_test, y_test)
@@ -33,6 +33,7 @@ print(acc)
 
 predict = model.predict(x_test)
 
+"""
 for i in range(len(x_test)):
     print("Predicted: ", predict[i], " Data: ", x_test[i], " Actual: ", y_test[i])
-    n = model.kneighbors([x_test[i]], 9)
+    n = model.kneighbors([x_test[i]], 9)"""
