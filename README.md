@@ -8,7 +8,7 @@ dataset_filepath = 'canada-cumulative-case-count-by-new-hybrid-regional-health-b
 
 covid = pd.read_csv(dataset_filepath)
 ```
-The objective of this project is to highlight the use of ML algorithms(K-Means clustering) to solve real world problems.
+The objective of this project is to highlight the use of ML algorithms(K-Nearest neighbor) to solve real world problems.
 
 The dataset provides a lot of columns, but I chose to work only with a small number of them:
 - attributes: province, casecount, recovered, totalPop2019
