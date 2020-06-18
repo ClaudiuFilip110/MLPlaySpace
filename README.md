@@ -53,8 +53,10 @@ Seeing how my KNN model didn't work very well with the provided dataset I tried 
 
 <h2> Using a plot </h2>
 I used a plot to visualize the data.
-![alt text](https://github.com/ClaudiuFilip110/MLPlaySpace/blob/master/graph.jpg?raw=true)
 
+![Graph](https://github.com/ClaudiuFilip110/MLPlaySpace/graph.PNG?raw=true)
+
+![Alt text](graph.png?raw=true "Title")
 ```
 import matplotlib.pyplot as pyplot
 from matplotlib import style
