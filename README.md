@@ -8,7 +8,7 @@ dataset_filepath = 'canada-cumulative-case-count-by-new-hybrid-regional-health-b
 
 covid = pd.read_csv(dataset_filepath)
 ```
-The objective of this project is to highlight the use of ML algorithms(K-Nearest neighbor) to solve real world problems.
+The objective of this project is to predict the probability of you dying in a canadian hospital of Covid-19 and highlight the use of ML algorithms(K-Nearest neighbor, Linear Regression) to solve real world problems.
 
 The dataset provides a lot of columns, but I chose to work only with a small number of them:
 - attributes: province, casecount, recovered, totalPop2019
@@ -48,12 +48,28 @@ I used a K-Nearest Neighbors model which looks at the K nearest points in the da
 <h2> Accuracy and scoring the model </h2>
 The accuray of my model was poor: only 0.6143396226415094. An accuracy of 61% is not great, but it is better than the next model: Linear Regression.
 
+<h2>Changing the number of neighbors and test sizes</h2>
+This being a rather scattered dataset(look at the lower graph) having a small number of neighbors helps with accuracy. By lowering the number of neighbors the accuracy of the model increased dramatically.
+
+ - 9 neighbors results in accuracy 37.5%
+ - 7 neighbors results in accuracy 41.4%
+ - 3 neighbors results in accuracy 61.4%
+ - 1 neighbor results in accuracy 96.0%
+ 
+ Moreover, changing the test size from 20% to 10% increases the accuracy of the model even further to 98.3%
+
+
+
+
+<br><br><br>
 <h2>Linear Regression</h2>
 Seeing how my KNN model didn't work very well with the provided dataset I tried to use Linear Regression to predict the number of deaths. This may not be such a good idea because the data is not in linear, but I will try it nonetheless. 
 
 <h2> Using a plot </h2>
 I used a plot to visualize the data.
-![alt text](https://github.com/ClaudiuFilip110/MLPlaySpace/blob/master/graph.jpg?raw=true)
+
+
+![Graph](https://github.com/ClaudiuFilip110/MLPlaySpace/blob/master/graph.PNG)
 
 ```
 import matplotlib.pyplot as pyplot
