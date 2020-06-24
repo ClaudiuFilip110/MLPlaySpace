@@ -1,8 +1,9 @@
-# Machine Learning small project
+# Machine Learning project
 applying ML algorithms for Covid-19 datasets
 
 The dataset used for this application is: UNCOVER COVID-19 Challenge from Kaggle.
  - https://www.kaggle.com/roche-data-science-coalition/uncover?
+ - and another dataset from kaggle available in the repository
 ```
 dataset_filepath = 'canada-cumulative-case-count-by-new-hybrid-regional-health-boundaries.csv'
 
@@ -43,7 +44,7 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y
 
 I've used a test size of 10% - 59% accuray, but those results were poorer than the ones with 20% test size who scored 61% accuracy.
 
-<h2> Using the KNN model </h2>
+<h2> K Nearest Neighbors </h2>
 I used a K-Nearest Neighbors model which looks at the K nearest points in the dataset and puts the tests in their respective places.
 <h2> Accuracy and scoring the model </h2>
 The accuray of my model was poor: only 0.6143396226415094. An accuracy of 61% is not great, but it is better than the next model: Linear Regression.
@@ -86,4 +87,18 @@ With this we can visualize the non-linearity of the graph and so we can understa
 
 <h2>Accuracy</h2>
 The accuracy of this model was 0.21 or 21% which means this model is unusable.
+
+# Decision Tree Regression
+
+Unlike the other two projects, this model has 2 labels and uses a different dataset in which we have
+
+### features
+ - `Country/Region, Confirmed, Active, 1 week change, 1 week % increase, Deaths`
+
+### labels
+ -  `Recovered, WHO Region( the biggest region nearby)`
+
+This model has a few parameters the let you define the depth of the tree. For example is I chose the `max_leaf_nodes` to be 5 the accuracy of the model dropped to about 50% and as this number increased so did the accuracy. This is because of the way trees work. The depth of the tree depends on the number of the `max_leaf_nodes` so I chose the number as to not underfit or overfit.
+
+In the end the `max_leaf_nodes` propriety was set to x and the accuracy of the model was 92.57%
 

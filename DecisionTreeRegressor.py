@@ -32,7 +32,7 @@ y = list(zip(Recovered, WhoRegion))
 
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size=0.1)
 
-model = DecisionTreeRegressor(random_state=1, max_leaf_nodes=15)
+model = DecisionTreeRegressor(random_state=0, max_leaf_nodes=15)
 
 model.fit(x_test, y_test)
 acc = model.score(x_test, y_test)
